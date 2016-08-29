@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
    {
      title: 'Rouxmeet',
      artwork: myArtWork,
-     artist: myArtists
+     artist: myArtists,
+     page: 'home'
     }
   );
 });
@@ -33,12 +34,13 @@ router.get('/speakers', function(req, res, next) {
    {
      title: 'Speakers',
      artwork: myArtWork,
-     artist: myArtists
+     artist: myArtists,
+     page: 'artistList'
     }
   );
 });
 
-/* GET a speaker's details. */
+/* GET speaker's details page */
 router.get('/speakers/:speakerid', function(req, res, next) {
   var myArtWork = [];
   var myArtists = [];
@@ -54,7 +56,8 @@ router.get('/speakers/:speakerid', function(req, res, next) {
    {
      title: 'Speakers',
      artwork: myArtWork,
-     artist: myArtists
+     artist: myArtists,
+     page: 'artistDetail'
     }
   );
 });
