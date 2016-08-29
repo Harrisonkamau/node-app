@@ -16,4 +16,18 @@ router.get('/', function(req, res, next) {
   );
 });
 
+/* GET speakers page. */
+router.get('/speakers', function(req, res, next) {
+  var myArtWork = [];
+  appdata.speakers.forEach(function(item){
+    myArtWork = myArtWork.concat(item.artwork);
+  })
+  res.render('speakers',
+   {
+     title: 'Speakers',
+     artwork: myArtWork
+    }
+  );
+});
+
 module.exports = router;
