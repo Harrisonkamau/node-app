@@ -30,4 +30,22 @@ router.get('/speakers', function(req, res, next) {
   );
 });
 
+/* GET a speaker's details. */
+router.get('/speakers/:speakerid', function(req, res, next) {
+  var myArtWork = [];
+  appdata.speakers.forEach(function(item){
+    if(item.speakers) == req.params.speakerid{
+      myArtWork = myArtWork.concat(item.artwork);
+    }
+
+  })
+  res.render('speakers',
+   {
+     title: 'Speakers',
+     artwork: myArtWork
+    }
+  );
+});
+
+
 module.exports = router;
